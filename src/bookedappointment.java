@@ -47,10 +47,10 @@ public class bookedappointment extends javax.swing.JFrame {
         datech = new com.toedter.calendar.JDateChooser();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         bookedapp = new javax.swing.JTable();
-        jButton3 = new javax.swing.JButton();
         viewbutton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -97,6 +97,15 @@ public class bookedappointment extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Date");
 
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Go Back");
+        jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -108,9 +117,6 @@ public class bookedappointment extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cancelid, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(71, 71, 71)
-                        .addComponent(cancelappointment))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel3))
@@ -128,14 +134,23 @@ public class bookedappointment extends javax.swing.JFrame {
                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(datech, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(95, 95, 95)
-                        .addComponent(rescheduled)))
+                        .addGap(105, 105, 105)
+                        .addComponent(rescheduled))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addComponent(cancelappointment)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(76, 76, 76)
+                .addGap(16, 16, 16)
+                .addComponent(jLabel6)
+                .addGap(44, 44, 44)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cancelid, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -153,9 +168,9 @@ public class bookedappointment extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(timeslot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(datech, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                 .addComponent(rescheduled)
-                .addGap(14, 14, 14))
+                .addGap(24, 24, 24))
         );
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -181,17 +196,6 @@ public class bookedappointment extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(bookedapp);
-
-        jButton3.setBackground(new java.awt.Color(159, 238, 183));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Rescheduled");
-        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
 
         viewbutton.setBackground(new java.awt.Color(159, 238, 183));
         viewbutton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -225,11 +229,6 @@ public class bookedappointment extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(viewbutton)
                         .addGap(210, 210, 210))))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(361, 361, 361)
-                    .addComponent(jButton3)
-                    .addContainerGap(361, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -242,11 +241,6 @@ public class bookedappointment extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(viewbutton)
                 .addContainerGap(42, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(234, 234, 234)
-                    .addComponent(jButton3)
-                    .addContainerGap(234, Short.MAX_VALUE)))
         );
 
         pack();
@@ -295,23 +289,28 @@ public class bookedappointment extends javax.swing.JFrame {
     private void cancelappointmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelappointmentActionPerformed
         // TODO add your handling code here:
         int selectedRowIndex = bookedapp.getSelectedRow();
-   
+   String c = cancelid.getText();
     // Check if a row is selected
-    if (selectedRowIndex != -1) {
+    
+    
+    if (c.equals(null)) {
         // Get the model of the table
-        DefaultTableModel model = (DefaultTableModel) bookedapp.getModel();
         
-       // Get the customer ID from the selected row
-        int patientId = (int) model.getValueAt(selectedRowIndex, 0);
+        JOptionPane.showMessageDialog(this, "Please select a row to cancel appointment.", "No Row Selected", JOptionPane.WARNING_MESSAGE);
+
         
-     // Perform the cancellation operation
-      cancelAppointment(patientId);
-      
-       // Remove the selected row from the table model
-     model.removeRow(selectedRowIndex);
     } else {
       // Inform the user to select a row
-        JOptionPane.showMessageDialog(this, "Please select a row to cancel appointment.", "No Row Selected", JOptionPane.WARNING_MESSAGE);
+    DefaultTableModel model = (DefaultTableModel) bookedapp.getModel();
+        
+       // Get the customer ID from the selected row
+    int patientId=Integer.parseInt(c); 
+        
+     // Perform the cancellation operation
+    cancelAppointment(patientId);
+      
+       // Remove the selected row from the table model
+    model.removeRow(selectedRowIndex);    
     }
     }//GEN-LAST:event_cancelappointmentActionPerformed
     private void cancelAppointment(int customerId) {
@@ -324,7 +323,7 @@ public class bookedappointment extends javax.swing.JFrame {
             con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1522:XE", "system", "system");
 
             // Prepare SQL statement to update appointment status to canceled
-            String updateQuery = "DELETE FROM bookingAppointment WHERE customer_id = " + customerId;
+            String updateQuery = "DELETE FROM bookingAppointment WHERE customer_id = ?";
             statement = con.prepareStatement(updateQuery);
             statement.setInt(1, customerId);
 
@@ -351,10 +350,6 @@ public class bookedappointment extends javax.swing.JFrame {
             }
         }
 }
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
     private void rescheduledActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rescheduledActionPerformed
         // TODO add your handling code here:
        Connection con = null;
@@ -411,6 +406,13 @@ public class bookedappointment extends javax.swing.JFrame {
 
     }//GEN-LAST:event_rescheduledActionPerformed
 
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        HomePage hp = new HomePage(un);
+        hp.setVisible(true);
+        dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel6MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -448,12 +450,12 @@ public class bookedappointment extends javax.swing.JFrame {
     private javax.swing.JTextField cancelid;
     private javax.swing.JTextField dID;
     private com.toedter.calendar.JDateChooser datech;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton rescheduled;

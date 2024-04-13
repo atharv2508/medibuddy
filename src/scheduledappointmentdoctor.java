@@ -44,6 +44,7 @@ public class scheduledappointmentdoctor extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         schedule_appointment = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -102,6 +103,15 @@ public class scheduledappointmentdoctor extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(schedule_appointment);
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Go Back");
+        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -117,11 +127,17 @@ public class scheduledappointmentdoctor extends javax.swing.JFrame {
                         .addGap(353, 353, 353)
                         .addComponent(jButton1)))
                 .addContainerGap(133, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(75, 75, 75)
+                .addGap(22, 22, 22)
+                .addComponent(jLabel1)
+                .addGap(37, 37, 37)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -187,6 +203,13 @@ try {
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        HomePageDoctor hp = new HomePageDoctor(un);
+        hp.setVisible(true);
+        dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -219,6 +242,7 @@ try {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

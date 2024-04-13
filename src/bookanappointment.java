@@ -383,27 +383,26 @@ public class bookanappointment extends javax.swing.JFrame {
         return;
     }
     
-    try {            
-        String sql = "INSERT INTO bookingAppointment(doctorId, timeslot, preferred_date,customer_id,username) VALUES (?, ?, ?,?,?)";
+        try {
+        String sql = "INSERT INTO bookingAppointment(doctorId, timeslot, preferred_date, customer_id, username) VALUES (?, ?, TO_DATE(?, 'YYYY-MM-DD'), ?, ?)";
         con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1522:XE", "system", "system");
         pst = con.prepareStatement(sql);
-        pst.setString(1, ID); // Use ID variable directly
-        pst.setString(2, t); 
-// Use t variable directly
+        pst.setString(1, ID);
+        pst.setString(2, t);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        String date = sdf.format (date_chooser .getDate()) ; 
-        pst. setString (3,date) ;
-        pst.setInt(4, pID); // Use ID variable directly
+        String date = sdf.format(date_chooser.getDate());
+        pst.setString(3, date);
+        pst.setInt(4, pID);
         pst.setString(5, un);
-        
 
-        pst.executeUpdate();            
+        pst.executeUpdate();
         JOptionPane.showMessageDialog(null, "Appointment Booked Successfully!!");
         dID.setText("");
-        timeslot.setSelectedIndex(0); // Reset the selected index to default
+        timeslot.setSelectedIndex(0);
     } catch (SQLException ex) {
         JOptionPane.showMessageDialog(null, ex);
-    }        
+    }
+
     }//GEN-LAST:event_bookappointActionPerformed
 
     /**
